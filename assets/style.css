@@ -280,7 +280,7 @@ html:not(.dark) .hover-row:hover { background: rgba(0,0,0,0.04); }
 }
 .drawer-logo { height: 26px; width: auto; object-fit: contain; }
 .drawer-logo-text {
-  font-size: 13px; font-weight: 800; color: var(--primary);
+  font-size: 30px; font-weight: 800; color: var(--primary);
   letter-spacing: -0.02em;
 }
 .drawer-close {
@@ -375,7 +375,7 @@ html:not(.dark) .hover-row:hover { background: rgba(0,0,0,0.04); }
 }
 .header-logo { height: 26px; width: auto; object-fit: contain; }
 .header-logo-text {
-  font-size: 13px; font-weight: 800; color: #FFFFFF;
+  font-size: 30px; font-weight: 800; color: #FFFFFF;
   letter-spacing: -0.02em;
 }
 .header-actions { display: flex; align-items: center; gap: 8px; }
