@@ -22,9 +22,9 @@
   <!-- ── Side drawer (same as dashboard) ── -->
   <aside id="sideDrawer" class="side-drawer" aria-label="Navigation drawer">
     <div class="drawer-header">
-      <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="drawer-logo"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="drawer-logo-text" style="display:none">Roadmen</span>
+      <!-- <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="drawer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"> -->
+      <span class="drawer-logo-text">Roadmen</span>
       <button id="drawerClose" class="drawer-close" aria-label="Close drawer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18 6 6 18M6 6l12 12"/>
@@ -32,10 +32,10 @@
       </button>
     </div>
     <div class="drawer-profile">
-      <div class="drawer-avatar">R</div>
+    
       <p class="drawer-name">Rifat Hassan</p>
       <p class="drawer-email">rifat.hassan@roadmen.com</p>
-      <span class="drawer-badge">Fleet Driver · ID #4821</span>
+    
     </div>
     <nav class="drawer-nav">
       <p class="drawer-section-label">Account</p>
@@ -125,9 +125,32 @@
         </div>
 
         <div class="dp-content">
+          <div style="display:flex;flex-direction:column;gap:20px">
 
-          <!-- Date & Time -->
-          <div style="display:flex;flex-direction:column;gap:16px">
+            <!-- Trip Title -->
+            <div class="form-group">
+              <label class="form-label" for="reqTitle">Trip Title</label>
+              <input id="reqTitle" type="text" class="form-input" autocomplete="off">
+            </div>
+
+            <!-- Purpose -->
+            <div class="form-group">
+              <label class="form-label" for="reqPurpose">Purpose</label>
+              <input id="reqTitle" type="text" class="form-input" autocomplete="off">
+              <!-- <div class="form-select-wrap">
+                <select id="reqPurpose" class="form-input">
+                  <option value="">Select trip purpose…</option>
+                  <option value="official">Official Trip</option>
+                  <option value="meeting">Client Meeting</option>
+                  <option value="site">Site Visit</option>
+                  <option value="training">Training / Workshop</option>
+                  <option value="airport">Airport Transfer</option>
+                  <option value="other">Other</option>
+                </select>
+              </div> -->
+            </div>
+
+            <!-- Date & Time -->
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="reqDate">Date</label>
@@ -140,65 +163,106 @@
             </div>
 
             <!-- Pickup Point -->
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label class="form-label" for="pickupInput">Pickup Point</label>
               <input id="pickupInput" type="text" class="form-input" placeholder="Enter your pickup location" autocomplete="off">
-            </div>
+              <div class="smap-wrap">
+                <svg class="smap-svg" viewBox="0 0 390 155" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="390" height="155" fill="#F5F3EF"/>
+                  <rect x="10"  y="8"   width="68"  height="44" rx="2" fill="#E8E4DC"/>
+                  <rect x="86"  y="8"   width="52"  height="28" rx="2" fill="#E8E4DC"/>
+                  <rect x="146" y="8"   width="85"  height="44" rx="2" fill="#DDF0D0"/>
+                  <rect x="240" y="8"   width="65"  height="32" rx="2" fill="#E8E4DC"/>
+                  <rect x="314" y="8"   width="70"  height="44" rx="2" fill="#E8E4DC"/>
+                  <rect x="10"  y="98"  width="70"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="88"  y="90"  width="95"  height="58" rx="2" fill="#E8E4DC"/>
+                  <rect x="192" y="100" width="68"  height="50" rx="2" fill="#DDF0D0"/>
+                  <rect x="269" y="85"  width="115" height="65" rx="2" fill="#E8E4DC"/>
+                  <rect x="0"   y="60"  width="390" height="14" fill="#FFFFFF"/>
+                  <rect x="79"  y="0"   width="8"   height="155" fill="#FFFFFF"/>
+                  <rect x="236" y="0"   width="8"   height="155" fill="#FFFFFF"/>
+                  <line x1="0"   y1="67" x2="74"  y2="67" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                  <line x1="92"  y1="67" x2="231" y2="67" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                  <line x1="249" y1="67" x2="390" y2="67" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                </svg>
+                <div class="smap-pin">
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none">
+                    <path d="M13 0C5.82 0 0 5.82 0 13c0 9.1 13 21 13 21S26 22.1 26 13C26 5.82 20.18 0 13 0z" fill="#F26522"/>
+                    <circle cx="13" cy="13" r="5.5" fill="white"/>
+                  </svg>
+                </div>
+                <div class="smap-label" id="pickupMapLabel">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:#F26522"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                  <span>Enter a pickup location</span>
+                </div>
+              </div>
+            </div> -->
 
             <!-- Start Place -->
             <div class="form-group">
-              <label class="form-label">Start Place</label>
-              <div class="lf-wrap">
-                <input id="startInput" type="text" class="form-input" placeholder="Search start location…" autocomplete="off">
-                <button class="lf-map-btn" data-field="start" aria-label="Pick on map">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <label class="form-label" for="startInput">Start Place</label>
+              <input id="startInput" type="text" class="form-input" placeholder="Enter start location…" autocomplete="off">
+              <div class="smap-wrap">
+                <svg class="smap-svg" viewBox="0 0 390 155" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="390" height="155" fill="#F5F3EF"/>
+                  <rect x="10"  y="8"   width="110" height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="128" y="8"   width="90"  height="50" rx="2" fill="#DDF0D0"/>
+                  <rect x="226" y="8"   width="155" height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="10"  y="100" width="80"  height="48" rx="2" fill="#E8E4DC"/>
+                  <rect x="98"  y="100" width="120" height="48" rx="2" fill="#E8E4DC"/>
+                  <rect x="226" y="100" width="155" height="48" rx="2" fill="#E8E4DC"/>
+                  <rect x="0"   y="62"  width="390" height="18" fill="#FFFFFF"/>
+                  <rect x="120" y="0"   width="8"   height="155" fill="#FFFFFF"/>
+                  <line x1="0"   y1="71" x2="115" y2="71" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="12 8"/>
+                  <line x1="133" y1="71" x2="390" y2="71" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="12 8"/>
+                </svg>
+                <div class="smap-pin">
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none">
+                    <path d="M13 0C5.82 0 0 5.82 0 13c0 9.1 13 21 13 21S26 22.1 26 13C26 5.82 20.18 0 13 0z" fill="#22C55E"/>
+                    <circle cx="13" cy="13" r="5.5" fill="white"/>
                   </svg>
-                  Map
-                </button>
+                </div>
+                <div class="smap-label" id="startMapLabel">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:#22C55E"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                  <span>Enter a start location</span>
+                </div>
               </div>
             </div>
 
             <!-- End Place -->
             <div class="form-group">
-              <label class="form-label">End Place</label>
-              <div class="lf-wrap">
-                <input id="endInput" type="text" class="form-input" placeholder="Search destination…" autocomplete="off">
-                <button class="lf-map-btn" data-field="end" aria-label="Pick on map">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <label class="form-label" for="endInput">End Place</label>
+              <input id="endInput" type="text" class="form-input" placeholder="Enter destination…" autocomplete="off">
+              <div class="smap-wrap">
+                <svg class="smap-svg" viewBox="0 0 390 155" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="390" height="155" fill="#F5F3EF"/>
+                  <rect x="10"  y="8"   width="55"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="73"  y="8"   width="75"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="156" y="8"   width="55"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="219" y="8"   width="80"  height="25" rx="2" fill="#DDF0D0"/>
+                  <rect x="307" y="8"   width="78"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="10"  y="98"  width="55"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="73"  y="98"  width="130" height="50" rx="2" fill="#DDF0D0"/>
+                  <rect x="211" y="85"  width="85"  height="63" rx="2" fill="#E8E4DC"/>
+                  <rect x="304" y="98"  width="80"  height="50" rx="2" fill="#E8E4DC"/>
+                  <rect x="0"   y="63"  width="390" height="15" fill="#FFFFFF"/>
+                  <rect x="65"  y="0"   width="8"   height="155" fill="#FFFFFF"/>
+                  <rect x="210" y="0"   width="8"   height="155" fill="#FFFFFF"/>
+                  <rect x="300" y="0"   width="8"   height="155" fill="#FFFFFF"/>
+                  <line x1="0"   y1="70.5" x2="60"  y2="70.5" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                  <line x1="78"  y1="70.5" x2="205" y2="70.5" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                  <line x1="223" y1="70.5" x2="295" y2="70.5" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                  <line x1="313" y1="70.5" x2="390" y2="70.5" stroke="#E0E0D8" stroke-width="1.5" stroke-dasharray="8 6"/>
+                </svg>
+                <div class="smap-pin">
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none">
+                    <path d="M13 0C5.82 0 0 5.82 0 13c0 9.1 13 21 13 21S26 22.1 26 13C26 5.82 20.18 0 13 0z" fill="#EF4444"/>
+                    <circle cx="13" cy="13" r="5.5" fill="white"/>
                   </svg>
-                  Map
-                </button>
-              </div>
-            </div>
-
-            <!-- Route Preview (shown after both locations set) -->
-            <div id="routePreviewContainer" class="form-group hidden">
-              <label class="form-label">Route Preview</label>
-              <div class="route-preview-box">
-                <div id="routePreviewMap" class="route-preview-map">
-                  <!-- Google Map rendered here by JS -->
-                  <div class="map-placeholder" id="routeMapPlaceholder">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color:var(--muted-fg)">
-                      <polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
-                      <line x1="9" x2="9" y1="3" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                      <line x1="15" x2="15" y1="6" y2="21" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
-                    </svg>
-                    <p>Route map preview</p>
-                  </div>
                 </div>
-                <div class="route-preview-info">
-                  <div class="route-stat">
-                    <span class="route-stat-label">Distance</span>
-                    <span class="route-stat-value" id="routeDistance">—</span>
-                  </div>
-                  <div class="route-stat">
-                    <span class="route-stat-label">Est. Time</span>
-                    <span class="route-stat-value" id="routeDuration">—</span>
-                  </div>
+                <div class="smap-label" id="endMapLabel">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:#EF4444"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                  <span>Enter a destination</span>
                 </div>
               </div>
             </div>
@@ -361,49 +425,6 @@
   </div>
 
   <!-- ════════════════════════════════════
-       MAP LOCATION PICKER (slides up)
-  ════════════════════════════════════ -->
-  <div id="mapPickerModal" class="map-picker-modal" aria-label="Select location on map">
-    <div class="map-picker-header">
-      <div class="map-picker-top">
-        <p class="map-picker-label" id="mapPickerLabel">Select Start Location</p>
-        <button id="mapPickerClose" class="map-picker-close" aria-label="Close map">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18 6 6 18M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-      <div class="map-picker-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:rgba(255,255,255,0.7)">
-          <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-4.35-4.35"/>
-        </svg>
-        <input id="mapPickerSearch" type="text" class="map-picker-search-input" placeholder="Search for a place…" autocomplete="off">
-      </div>
-    </div>
-    <div id="mapPickerMap" class="map-picker-map">
-      <!-- Google Map injected here -->
-      <div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted-fg);background:var(--muted)">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><line x1="15" x2="15" y1="6" y2="21" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg>
-        <p style="font-size:13px;font-weight:600">Add Google Maps API key</p>
-        <p style="font-size:11px;text-align:center;line-height:1.6;max-width:220px">Replace <code style="background:rgba(0,0,0,0.2);padding:2px 6px;border-radius:4px">YOUR_GOOGLE_MAPS_API_KEY</code> in booking.html to enable the map</p>
-      </div>
-    </div>
-    <div class="map-picker-footer">
-      <div class="map-picker-address">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-          <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-        </svg>
-        <span id="mapPickerAddress">Tap on the map to select a location</span>
-      </div>
-      <button id="confirmMapLocation" class="btn-primary" disabled style="opacity:0.5">
-        Use This Location
-      </button>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════════
        MAIN PAGE — Booking List
   ════════════════════════════════════ -->
   <main class="content">
@@ -417,9 +438,9 @@
             <line x1="3" x2="21" y1="18" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
           </svg>
         </button>
-        <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="header-logo"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span class="header-logo-text" style="display:none">Roadmen Fleet</span>
+        <!-- <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="header-logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'"> -->
+        <span class="header-logo-text">Roadmen Fleet</span>
         <div class="header-actions">
           <button class="notif-btn" aria-label="Notifications">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -492,18 +513,5 @@
 
 <script src="assets/app.js"></script>
 <script src="assets/booking.js"></script>
-<!--
-  GOOGLE MAPS INTEGRATION
-  To enable the interactive map and autocomplete:
-  1. Get an API key from https://console.cloud.google.com/
-  2. Enable: Maps JavaScript API, Places API, Directions API
-  3. Replace YOUR_GOOGLE_MAPS_API_KEY below with your actual key
--->
-<script>
-  function initBookingMap() {
-    if (window.onGoogleMapsReady) window.onGoogleMapsReady();
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initBookingMap" async defer onerror="console.warn('Google Maps failed to load. Add a valid API key in booking.html.')"></script>
 </body>
 </html>
