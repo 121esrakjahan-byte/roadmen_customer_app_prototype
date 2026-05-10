@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Booking Requests — Roadmen Fleet</title>
+  <meta name="description" content="Roadmen Fleet — Booking Requests">
+  <meta name="theme-color" content="#F26522">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="gradient-bg" aria-hidden="true"></div>
+
+  <!-- ── Drawer overlay ── -->
+  <div id="drawerOverlay" class="drawer-overlay" aria-hidden="true"></div>
+
+  <!-- ── Side drawer (same as dashboard) ── -->
+  <aside id="sideDrawer" class="side-drawer" aria-label="Navigation drawer">
+    <div class="drawer-header">
+      <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="drawer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="drawer-logo-text" style="display:none">Roadmen</span>
+      <button id="drawerClose" class="drawer-close" aria-label="Close drawer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-profile">
+      <div class="drawer-avatar">R</div>
+      <p class="drawer-name">Rifat Hassan</p>
+      <p class="drawer-email">rifat.hassan@roadmen.com</p>
+      <span class="drawer-badge">Fleet Driver · ID #4821</span>
+    </div>
+    <nav class="drawer-nav">
+      <p class="drawer-section-label">Account</p>
+      <a href="index.html" class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </span>
+        Dashboard
+      </a>
+      <button class="drawer-item active">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect width="18" height="18" x="3" y="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="16" x2="16" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="8"  x2="8"  y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3"  x2="21" y1="10" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </span>
+        Booking Requests
+      </button>
+      <button class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+        </span>
+        Notifications
+        <span style="margin-left:auto;background:var(--primary);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px">3</span>
+      </button>
+      <p class="drawer-section-label">Support</p>
+      <button class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 17h.01"/>
+          </svg>
+        </span>
+        Help Center
+      </button>
+      <button class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+          </svg>
+        </span>
+        Settings
+      </button>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-logout">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 17 21 12 16 7"/>
+            <line x1="21" x2="9" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          </svg>
+        </span>
+        Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- ════════════════════════════════════
+       NEW REQUEST PANEL (slide in from right)
+  ════════════════════════════════════ -->
+  <div id="newRequestPanel" class="detail-page" aria-label="New booking request">
+    <div class="detail-scrollable">
+      <div class="detail-inner">
+
+        <div class="dp-header">
+          <button id="closeNewRequest" class="dp-back-icon" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <div class="dp-header-center">
+            <p class="dp-header-title">New Booking Request</p>
+            <p class="dp-header-subtitle">Fleet ride assignment</p>
+          </div>
+          <div class="dp-header-spacer" style="width:40px"></div>
+        </div>
+
+        <div class="dp-content">
+
+          <!-- Date & Time -->
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="reqDate">Date</label>
+                <input id="reqDate" type="date" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reqTime">Time</label>
+                <input id="reqTime" type="time" class="form-input" required>
+              </div>
+            </div>
+
+            <!-- Pickup Point -->
+            <div class="form-group">
+              <label class="form-label" for="pickupInput">Pickup Point</label>
+              <input id="pickupInput" type="text" class="form-input" placeholder="Enter your pickup location" autocomplete="off">
+            </div>
+
+            <!-- Start Place -->
+            <div class="form-group">
+              <label class="form-label">Start Place</label>
+              <div class="lf-wrap">
+                <input id="startInput" type="text" class="form-input" placeholder="Search start location…" autocomplete="off">
+                <button class="lf-map-btn" data-field="start" aria-label="Pick on map">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                  Map
+                </button>
+              </div>
+            </div>
+
+            <!-- End Place -->
+            <div class="form-group">
+              <label class="form-label">End Place</label>
+              <div class="lf-wrap">
+                <input id="endInput" type="text" class="form-input" placeholder="Search destination…" autocomplete="off">
+                <button class="lf-map-btn" data-field="end" aria-label="Pick on map">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                  Map
+                </button>
+              </div>
+            </div>
+
+            <!-- Route Preview (shown after both locations set) -->
+            <div id="routePreviewContainer" class="form-group hidden">
+              <label class="form-label">Route Preview</label>
+              <div class="route-preview-box">
+                <div id="routePreviewMap" class="route-preview-map">
+                  <!-- Google Map rendered here by JS -->
+                  <div class="map-placeholder" id="routeMapPlaceholder">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color:var(--muted-fg)">
+                      <polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+                      <line x1="9" x2="9" y1="3" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                      <line x1="15" x2="15" y1="6" y2="21" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                    </svg>
+                    <p>Route map preview</p>
+                  </div>
+                </div>
+                <div class="route-preview-info">
+                  <div class="route-stat">
+                    <span class="route-stat-label">Distance</span>
+                    <span class="route-stat-value" id="routeDistance">—</span>
+                  </div>
+                  <div class="route-stat">
+                    <span class="route-stat-label">Est. Time</span>
+                    <span class="route-stat-value" id="routeDuration">—</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit CTA -->
+    <div class="dp-cta">
+      <button id="submitRequestBtn" class="btn-pick-fleet" style="font-size:15px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 2 11 13"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 2 15 22 11 13 2 9l20-7z"/>
+        </svg>
+        Submit Booking Request
+      </button>
+    </div>
+
+    <nav class="bottom-nav-dp" aria-label="Navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-item" aria-label="Home">
+          <span class="nav-indicator"></span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <button class="nav-item" aria-label="Trips"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Trips</span></button>
+        <button class="nav-item active" aria-label="Bookings"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><line x1="16" x2="16" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="8" x2="8" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="3" x2="21" y1="10" y2="10" stroke="currentColor" stroke-width="2"/></svg><span>Bookings</span></button>
+        <button class="nav-item" aria-label="Alerts"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>Alerts</span></button>
+        <button class="nav-item" aria-label="Profile"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Profile</span></button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ════════════════════════════════════
+       BOOKING DETAIL PANEL (slide in from right)
+  ════════════════════════════════════ -->
+  <div id="bookingDetailPanel" class="detail-page" aria-label="Booking details">
+    <div class="detail-scrollable">
+      <div class="detail-inner">
+
+        <div class="dp-header">
+          <button id="closeBookingDetail" class="dp-back-icon" aria-label="Go back">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <div class="dp-header-center">
+            <p class="dp-header-title">Booking Details</p>
+            <p class="dp-header-subtitle" id="bdPanelSubtitle">Fleet Booking Request</p>
+          </div>
+          <button class="dp-header-more" aria-label="More options">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="5"  r="1.2" fill="currentColor"/>
+              <circle cx="12" cy="12" r="1.2" fill="currentColor"/>
+              <circle cx="12" cy="19" r="1.2" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="dp-content">
+
+          <!-- Hero card -->
+          <div class="dp-hero">
+            <div class="dp-hero-top">
+              <span class="dp-fleet-reg" id="bdId">BKG-2025-001</span>
+              <span class="bk-status" id="bdStatus">Pending</span>
+            </div>
+            <div class="dp-info-grid">
+              <div class="dp-info-item"><p class="dp-info-label">Date</p><p class="dp-info-value" id="bdDate">—</p></div>
+              <div class="dp-info-item"><p class="dp-info-label">Time</p><p class="dp-info-value" id="bdTime">—</p></div>
+              <div class="dp-info-item"><p class="dp-info-label">From</p><p class="dp-info-value dp-info-value-primary" id="bdFrom">—</p></div>
+              <div class="dp-info-item"><p class="dp-info-label">To</p><p class="dp-info-value" id="bdTo">—</p></div>
+            </div>
+          </div>
+
+          <!-- Pickup + Route -->
+          <p class="dp-section-title">Route & Pickup</p>
+          <div class="dp-route-card">
+            <div class="rt-item">
+              <div class="rt-indicator"><div class="rt-dot rt-dot-start"></div><div class="rt-line rt-line-orange"></div></div>
+              <div class="rt-body"><p class="rt-label">From</p><p class="rt-place" id="bdRouteFrom">—</p></div>
+            </div>
+            <div class="rt-item">
+              <div class="rt-indicator"><div class="rt-dot rt-dot-pickup"></div><div class="rt-line"></div></div>
+              <div class="rt-pickup-row">
+                <p class="rt-pickup-badge">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  Your Pickup
+                </p>
+                <p class="rt-place" id="bdPickup">—</p>
+              </div>
+            </div>
+            <div class="rt-item">
+              <div class="rt-indicator"><div class="rt-dot rt-dot-end"></div></div>
+              <div class="rt-body"><p class="rt-label">Destination</p><p class="rt-place" id="bdRouteTo">—</p></div>
+            </div>
+          </div>
+
+          <!-- Route Map Preview -->
+          <p class="dp-section-title">Route Map</p>
+          <div class="dp-map shadow-card">
+            <div class="dp-map-bg"></div>
+            <svg class="dp-map-svg" viewBox="0 0 390 200" fill="none" aria-hidden="true">
+              <line x1="0" y1="50"  x2="390" y2="50"  stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="0" y1="100" x2="390" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="0" y1="150" x2="390" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="80"  y1="0" x2="80"  y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="200" y1="0" x2="200" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="310" y1="0" x2="310" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <path d="M0 85 Q 100 75 200 100 T 390 90" stroke="rgba(255,255,255,0.1)" stroke-width="5" stroke-linecap="round"/>
+              <path d="M 40 160 Q 120 130 200 95 Q 270 65 350 50" stroke="#F26522" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 5" opacity="0.9"/>
+              <path d="M 40 160 Q 120 130 200 95 Q 270 65 350 50" stroke="#F26522" stroke-width="8" stroke-linecap="round" opacity="0.12"/>
+              <circle cx="40"  cy="160" r="8" fill="#F26522"/>
+              <circle cx="40"  cy="160" r="14" stroke="#F26522" stroke-width="2" opacity="0.3" fill="none"/>
+              <circle cx="350" cy="50"  r="8" fill="#38BDF8"/>
+              <circle cx="350" cy="50"  r="14" stroke="#38BDF8" stroke-width="2" opacity="0.3" fill="none"/>
+            </svg>
+            <p class="dp-map-label dp-map-label-start" id="bdMapFrom">Start</p>
+            <p class="dp-map-label dp-map-label-end"   id="bdMapTo">End</p>
+          </div>
+
+          <!-- Request Status Timeline -->
+          <p class="dp-section-title">Request Status</p>
+          <div class="dp-route-card">
+            <div class="bk-timeline" id="bdTimeline">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Admin Notes -->
+          <p class="dp-section-title">Admin Notes</p>
+          <div id="bdAdminNote" class="admin-note-card">
+            <p class="admin-note-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Admin Comment
+            </p>
+            <p class="admin-note-text" id="bdAdminText">No comments yet.</p>
+          </div>
+
+          <!-- Created info -->
+          <div style="text-align:center;padding:8px 0">
+            <p class="text-11 text-muted">Submitted on <span id="bdCreated">—</span></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <nav class="bottom-nav-dp" aria-label="Navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-item" aria-label="Home"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+        <button class="nav-item" aria-label="Trips"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Trips</span></button>
+        <button class="nav-item active" aria-label="Bookings"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><line x1="16" x2="16" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="8" x2="8" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="3" x2="21" y1="10" y2="10" stroke="currentColor" stroke-width="2"/></svg><span>Bookings</span></button>
+        <button class="nav-item" aria-label="Alerts"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>Alerts</span></button>
+        <button class="nav-item" aria-label="Profile"><span class="nav-indicator"></span><svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Profile</span></button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ════════════════════════════════════
+       MAP LOCATION PICKER (slides up)
+  ════════════════════════════════════ -->
+  <div id="mapPickerModal" class="map-picker-modal" aria-label="Select location on map">
+    <div class="map-picker-header">
+      <div class="map-picker-top">
+        <p class="map-picker-label" id="mapPickerLabel">Select Start Location</p>
+        <button id="mapPickerClose" class="map-picker-close" aria-label="Close map">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="map-picker-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:rgba(255,255,255,0.7)">
+          <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-4.35-4.35"/>
+        </svg>
+        <input id="mapPickerSearch" type="text" class="map-picker-search-input" placeholder="Search for a place…" autocomplete="off">
+      </div>
+    </div>
+    <div id="mapPickerMap" class="map-picker-map">
+      <!-- Google Map injected here -->
+      <div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted-fg);background:var(--muted)">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><line x1="15" x2="15" y1="6" y2="21" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg>
+        <p style="font-size:13px;font-weight:600">Add Google Maps API key</p>
+        <p style="font-size:11px;text-align:center;line-height:1.6;max-width:220px">Replace <code style="background:rgba(0,0,0,0.2);padding:2px 6px;border-radius:4px">YOUR_GOOGLE_MAPS_API_KEY</code> in booking.html to enable the map</p>
+      </div>
+    </div>
+    <div class="map-picker-footer">
+      <div class="map-picker-address">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        <span id="mapPickerAddress">Tap on the map to select a location</span>
+      </div>
+      <button id="confirmMapLocation" class="btn-primary" disabled style="opacity:0.5">
+        Use This Location
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       MAIN PAGE — Booking List
+  ════════════════════════════════════ -->
+  <main class="content">
+
+    <header class="header">
+      <div class="header-top">
+        <button id="menuBtn" class="menu-btn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="3" x2="21" y1="6"  y2="6"  stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3" x2="16" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3" x2="21" y1="18" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          </svg>
+        </button>
+        <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="header-logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="header-logo-text" style="display:none">Roadmen Fleet</span>
+        <div class="header-actions">
+          <button class="notif-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
+            <span class="notif-badge"></span>
+          </button>
+        </div>
+      </div>
+      <div class="header-greeting" style="margin-top:4px">
+        <div class="greeting-text">
+          <h1 class="greeting-name">Booking Requests</h1>
+          <p class="page-subheading">Manage your fleet ride requests</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" aria-label="Booking Requests" style="margin-top:20px">
+      <div class="booking-cards-list" id="bookingCardsList">
+        <!-- Rendered by booking.js -->
+      </div>
+    </section>
+
+    <div class="bottom-spacer"></div>
+  </main>
+
+  <!-- ── Bottom nav ── -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-item" aria-label="Home">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </a>
+      <button class="nav-item" aria-label="Trips">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <span>Trips</span>
+      </button>
+      <button class="nav-item active" aria-label="Bookings">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><line x1="16" x2="16" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="8" x2="8" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><line x1="3" x2="21" y1="10" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Bookings</span>
+      </button>
+      <button class="nav-item" aria-label="Alerts">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        <span>Alerts</span>
+      </button>
+      <button class="nav-item" aria-label="Profile">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <span>Profile</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── FAB: New Request ── -->
+  <button id="newRequestFab" class="new-request-fab" aria-label="New booking request">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M5 12h14" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/>
+      <path d="M12 5v14" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/>
+    </svg>
+    New Request
+  </button>
+
+
+</div>
+
+<script src="assets/app.js"></script>
+<script src="assets/booking.js"></script>
+<!--
+  GOOGLE MAPS INTEGRATION
+  To enable the interactive map and autocomplete:
+  1. Get an API key from https://console.cloud.google.com/
+  2. Enable: Maps JavaScript API, Places API, Directions API
+  3. Replace YOUR_GOOGLE_MAPS_API_KEY below with your actual key
+-->
+<script>
+  function initBookingMap() {
+    if (window.onGoogleMapsReady) window.onGoogleMapsReady();
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initBookingMap" async defer onerror="console.warn('Google Maps failed to load. Add a valid API key in booking.html.')"></script>
+</body>
+</html>

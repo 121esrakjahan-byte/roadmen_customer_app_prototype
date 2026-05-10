@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Roadmen Fleet Solution</title>
+  <meta name="description" content="Roadmen Fleet Solution — premium fleet management dashboard">
+  <meta name="theme-color" content="#F26522">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="gradient-bg" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════
+       DRAWER OVERLAY
+  ════════════════════════════════════ -->
+  <div id="drawerOverlay" class="drawer-overlay" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════
+       SIDE DRAWER
+  ════════════════════════════════════ -->
+  <aside id="sideDrawer" class="side-drawer" aria-label="Navigation drawer">
+
+    <div class="drawer-header">
+      <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="drawer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="drawer-logo-text" style="display:none">Roadmen</span>
+      <button id="drawerClose" class="drawer-close" aria-label="Close drawer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-profile">
+      <p class="drawer-name">Rifat Hassan</p>
+      <p class="drawer-email">rifat.hassan@roadmen.com</p>
+      <!-- <span class="drawer-badge">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        Fleet Driver · ID #4821
+      </span> -->
+    </div>
+
+    <nav class="drawer-nav">
+      <p class="drawer-section-label">Account</p>
+
+      <button class="drawer-item active">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </span>
+        My Profile
+      </button>
+
+      <button class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+        </span>
+        Notifications
+        <span style="margin-left:auto;background:var(--primary);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px">3</span>
+      </button>
+
+      <a href="booking.html" class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect width="18" height="18" x="3" y="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="16" x2="16" y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="8"  x2="8"  y1="2" y2="6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3"  x2="21" y1="10" y2="10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </span>
+        Booking Requests
+      </a>
+
+      <p class="drawer-section-label">Support</p>
+
+      <button class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 17h.01"/>
+          </svg>
+        </span>
+        Help Center
+      </button>
+
+      <button class="drawer-item">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </span>
+        Settings
+      </button>
+    </nav>
+
+    <div class="drawer-footer">
+      <button class="drawer-logout">
+        <span class="di-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 17 21 12 16 7"/>
+            <line x1="21" x2="9" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          </svg>
+        </span>
+        Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- ════════════════════════════════════
+       SCROLLABLE CONTENT
+  ════════════════════════════════════ -->
+  <main class="content">
+
+    <!-- ── HEADER ─────────────────────── -->
+    <header class="header">
+      <div class="header-top">
+        <button id="menuBtn" class="menu-btn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <line x1="3" x2="21" y1="6"  y2="6"  stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3" x2="16" y1="12" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3" x2="21" y1="18" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          </svg>
+        </button>
+
+        <img src="assets/images/logo.png" alt="Roadmen Fleet Solution" class="header-logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="header-logo-text" style="display:none">Roadmen Fleet</span>
+
+        <div class="header-actions">
+          <button class="notif-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
+            <span class="notif-badge"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="header-greeting">
+        <div class="greeting-text">
+          <h1 class="greeting-name">Welcome, <span class="greeting-username">Rifat Hassan</span></h1>
+        </div>
+        
+      </div>
+    </header>
+
+    <!-- ── MY SCHEDULES ─────────────────── -->
+    <section class="section" aria-label="My Schedules" style="margin-top:20px">
+      <div class="section-header">
+        <h2 class="section-title">My Schedules</h2>
+        <button class="btn-link">View All</button>
+      </div>
+      <div class="schedule-cards-list">
+
+        <!-- Schedule 1 — Active -->
+        <button class="schedule-card" aria-label="View schedule DHA-METRO-GA-12-3456">
+          <div class="sc-top">
+            <span class="sc-reg">DHA-METRO-GA-12-3456</span>
+            <span class="sc-status sc-status-active">● Active</span>
+          </div>
+          <div class="sc-route">
+            <div class="sc-dots">
+              <div class="sc-dot-start"></div>
+              <div class="sc-dot-line"></div>
+              <div class="sc-dot-end"></div>
+            </div>
+            <div class="sc-places">
+              <div>
+                <p class="sc-place-label">From</p>
+                <p class="sc-place-name">Mirpur DOHS, Dhaka</p>
+              </div>
+              <div>
+                <p class="sc-place-label">To</p>
+                <p class="sc-place-name">Tejgaon Industrial Area</p>
+              </div>
+            </div>
+            <div class="sc-chevron">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sc-meta">
+            <div class="sc-meta-item">
+              <div class="sc-meta-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <p class="sc-meta-label">Pickup Point</p>
+                <p class="sc-meta-value">Mirpur-10 Circle</p>
+              </div>
+            </div>
+            <div class="sc-meta-item">
+              <div class="sc-meta-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <p class="sc-meta-label">Date &amp; Time</p>
+                <p class="sc-meta-value">10 May · 8:30 AM</p>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <!-- Schedule 2 — Upcoming -->
+      
+
+      </div>
+    </section>
+
+    <!-- ── BOOKING REQUESTS ─────────────── -->
+    <section class="section" aria-label="Booking Requests">
+      <div class="section-header">
+        <h2 class="section-title">Booking Requests</h2>
+        <a href="booking.html" class="btn-link">View All</a>
+      </div>
+      <div class="booking-cards-list">
+
+        <!-- Pending -->
+        <a href="booking.html" class="booking-card" style="text-decoration:none">
+          <div class="bk-top">
+            <span class="bk-id">BKG-2025-001</span>
+            <span class="bk-status bk-status-pending">⏳ Pending</span>
+          </div>
+          <div class="bk-route">
+            <div class="sc-dots">
+              <div class="sc-dot-start"></div>
+              <div class="sc-dot-line"></div>
+              <div class="sc-dot-end"></div>
+            </div>
+            <div class="sc-places">
+              <div><p class="bk-place-label">From</p><p class="bk-place-name">Mirpur DOHS, Dhaka</p></div>
+              <div><p class="bk-place-label">To</p><p class="bk-place-name">Motijheel Commercial Area</p></div>
+            </div>
+            <div class="sc-chevron">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </div>
+          <div class="bk-meta">
+            <div class="bk-meta-item"><span class="bk-meta-label">Pickup</span><span class="bk-meta-value">Mirpur-10 Metro Station</span></div>
+            <div class="bk-meta-item"><span class="bk-meta-label">Date &amp; Time</span><span class="bk-meta-value">15 May · 9:00 AM</span></div>
+          </div>
+        </a>
+
+
+      </div>
+    </section>
+
+    <!-- ── SUMMARY CARDS ──────────────── -->
+    <section class="section-scroll scrollbar-hide" aria-label="Summary">
+      <div class="cards-row">
+
+        <div class="summary-card">
+          <div class="card-top">
+            <div class="card-icon tone-primary">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="m12 14 4-4"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3.34 19a10 10 0 1 1 17.32 0"/>
+              </svg>
+            </div>
+            <span class="trend trend-up">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 7 22 7 22 13"/></svg>
+              +9%
+            </span>
+          </div>
+          <p class="card-label">Distance this month</p>
+          <p class="card-value">1,248 km</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="card-top">
+            <div class="card-icon tone-accent">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+              </svg>
+            </div>
+            <span class="trend trend-up">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 7 22 7 22 13"/></svg>
+              −5%
+            </span>
+          </div>
+          <p class="card-label">Fuel this month</p>
+          <p class="card-value">82 L</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="card-top">
+            <div class="card-icon tone-success">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none">
+                <line stroke="currentColor" stroke-linecap="round" stroke-width="2" x1="12" x2="12" y1="2" y2="22"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <span class="trend trend-up">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 7 22 7 22 13"/></svg>
+              −3%
+            </span>
+          </div>
+          <p class="card-label">Spend this month</p>
+          <p class="card-value">৳18,420</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="card-top">
+            <div class="card-icon tone-warning">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <span class="trend trend-warn">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16 17 22 17 22 11"/></svg>
+              Soon
+            </span>
+          </div>
+          <p class="card-label">Next service</p>
+          <p class="card-value">320 km</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── REMINDERS ──────────────────── -->
+    <section class="section" aria-label="Reminders">
+      <div class="section-header">
+        <h2 class="section-title">Reminders</h2>
+        <button class="btn-link">View all</button>
+      </div>
+      <div class="glass card shadow-card space-y-2">
+
+        <div class="alert-row hover-row">
+          <div class="alert-icon tone-warning">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 2v4a2 2 0 0 0 2 2h4"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M10 9H8M16 13H8M16 17H8"/>
+            </svg>
+          </div>
+          <div class="alert-text">
+            <p class="text-sm font-medium">Tax token expires</p>
+            <p class="text-11 text-muted">Toyota Axio · in 12 days</p>
+          </div>
+          <svg class="icon-sm text-muted chevron-right" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"/>
+          </svg>
+        </div>
+
+        <div class="alert-row hover-row">
+          <div class="alert-icon tone-accent">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="alert-text">
+            <p class="text-sm font-medium">Service due soon</p>
+            <p class="text-11 text-muted">Honda Vezel · 320 km left</p>
+          </div>
+          <svg class="icon-sm text-muted chevron-right" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"/>
+          </svg>
+        </div>
+
+        <div class="alert-row hover-row">
+          <div class="alert-icon tone-destructive">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-width="2.2" d="M12 8v4M12 16h.01"/>
+            </svg>
+          </div>
+          <div class="alert-text">
+            <p class="text-sm font-medium">Insurance renewal</p>
+            <p class="text-11 text-muted">Toyota Axio · in 28 days</p>
+          </div>
+          <svg class="icon-sm text-muted chevron-right" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"/>
+          </svg>
+        </div>
+
+        <button class="btn-primary">Set Reminder</button>
+      </div>
+    </section>
+
+    <!-- ── QUICK ACTIONS ──────────────── -->
+    <section class="section" aria-label="Quick Actions">
+      <h2 class="section-title mb-3">Quick Actions</h2>
+      <div class="glass card shadow-card quick-actions-grid">
+
+        <button class="quick-action">
+          <div class="qa-icon tone-accent">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+          </div>
+          <span class="qa-label">Log Fuel</span>
+        </button>
+
+        <button class="quick-action">
+          <div class="qa-icon tone-success">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
+            </svg>
+          </div>
+          <span class="qa-label">Add Expense</span>
+        </button>
+
+        <button class="quick-action">
+          <div class="qa-icon tone-warning">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2" stroke="currentColor" stroke-width="2.2" fill="none"/>
+              <line x1="16" x2="16" y1="2" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="8" x2="8" y1="2" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="3" x2="21" y1="10" y2="10" stroke="currentColor" stroke-width="2.2"/>
+              <line x1="8" x2="12" y1="14" y2="14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="10" x2="10" y1="12" y2="16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="qa-label">Book Service</span>
+        </button>
+
+        <button class="quick-action">
+          <div class="qa-icon tone-primary">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2.2" fill="none"/>
+            </svg>
+          </div>
+          <span class="qa-label">Log Trip</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ── LIVE TRACKING ──────────────── -->
+    <section class="section" aria-label="Live Tracking">
+      <div class="section-header">
+        <h2 class="section-title">Where's My Car</h2>
+        <span class="live-status">
+          <span class="live-dot pulse-dot"></span>
+          Parked · 2 min ago
+        </span>
+      </div>
+      <div class="map-container shadow-card">
+        <div class="map-bg" aria-hidden="true"></div>
+        <svg class="map-roads" viewBox="0 0 380 180" fill="none" aria-hidden="true">
+          <path d="M-20 60 Q 100 40 200 80 T 400 70"   stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <path d="M40 -10 Q 80 80 60 200"              stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <path d="M-20 140 Q 200 100 400 130"          stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <path d="M280 -10 Q 250 100 320 200"          stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+        </svg>
+        <div class="car-pin primary-pin">
+          <div class="pin-dot pulse-dot"></div>
+          <span class="pin-label glass">My Daily · Home</span>
+        </div>
+        <div class="car-pin secondary-pin">
+          <div class="pin-dot-sm accent-dot"></div>
+          <span class="pin-label glass">Weekend</span>
+        </div>
+        <div class="map-badge top-left glass">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none" style="color:#F26522"><polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          <span class="text-10">Live</span>
+        </div>
+        <div class="map-badge top-right glass">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none" style="color:#4ADE80">
+            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span class="text-10">Locked</span>
+        </div>
+        <button class="map-badge bottom-right glass hover-scale">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none">
+            <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="15 3 21 3 21 9"/>
+            <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 21 3 21 3 15"/>
+            <line x1="21" x2="14" y1="3" y2="10" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="3"  x2="10" y1="21" y2="14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          </svg>
+          Open Map
+        </button>
+      </div>
+    </section>
+
+    <!-- ── MY CARS ────────────────────── -->
+    <section class="section" aria-label="My Cars">
+      <div class="section-header">
+        <h2 class="section-title">My Cars</h2>
+        <button class="btn-link flex-center gap-1">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path d="M12 5v14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+          Add car
+        </button>
+      </div>
+
+      <!-- Vehicle 1 -->
+      <div class="vehicle-card">
+        <div class="vehicle-top">
+          <div class="vehicle-info">
+            <div class="vehicle-avatar gradient-primary shadow-glow">🚗</div>
+            <div class="vehicle-details">
+              <p class="text-sm font-semibold">My Daily</p>
+              <p class="text-11 text-muted">Toyota Axio · 2019</p>
+              <p class="text-10 text-muted-40">DHA-METRO-GA-12-3456</p>
+            </div>
+          </div>
+          <span class="status-badge status-success">Parked</span>
+        </div>
+        <div class="vehicle-stats">
+          <div>
+            <p class="text-11 text-muted">Odometer</p>
+            <p class="text-11 font-semibold">48,250 km</p>
+          </div>
+          <div>
+            <p class="text-11 text-muted flex-center gap-1">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              Last trip
+            </p>
+            <p class="text-11 font-semibold">Home → Office</p>
+          </div>
+        </div>
+        <div class="fuel-bar-row">
+          <svg class="icon-xs text-muted" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+          <div class="fuel-track"><div class="fuel-fill fuel-success" style="width:72%"></div></div>
+          <span class="fuel-pct">72%</span>
+        </div>
+        <div class="vehicle-footer">
+          <span class="text-11 text-muted">Pearl White</span>
+          <div class="flex-center gap-1">
+            <button class="qicon text-muted hover-fg" aria-label="View">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>
+            </button>
+            <button class="qicon text-accent hover-accent" aria-label="Fuel">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </button>
+            <button class="qicon text-success hover-success" aria-label="Expense">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><line stroke="currentColor" stroke-linecap="round" stroke-width="2.2" x1="12" x2="12" y1="2" y2="22"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </button>
+            <button class="qicon text-destructive hover-destructive" aria-label="Alert">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.2" fill="none"/><line x1="12" x2="12" y1="8" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"/><line x1="12" x2="12.01" y1="16" y2="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle 2 -->
+      <div class="vehicle-card mt-3">
+        <div class="vehicle-top">
+          <div class="vehicle-info">
+            <div class="vehicle-avatar gradient-primary shadow-glow">🚗</div>
+            <div class="vehicle-details">
+              <div class="flex-center gap-2">
+                <p class="text-sm font-semibold">Weekend</p>
+                <span class="alert-badge" aria-label="Alert">
+                  <svg style="width:10px;height:10px" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5" fill="none"/><line x1="12" x2="12" y1="8" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/><line x1="12" x2="12.01" y1="16" y2="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/></svg>
+                </span>
+              </div>
+              <p class="text-11 text-muted">Honda Vezel · 2021</p>
+              <p class="text-10 text-muted-40">DHA-METRO-KHA-22-1188</p>
+            </div>
+          </div>
+          <span class="status-badge status-warning">Service due</span>
+        </div>
+        <div class="vehicle-stats">
+          <div>
+            <p class="text-11 text-muted">Odometer</p>
+            <p class="text-11 font-semibold">26,820 km</p>
+          </div>
+          <div>
+            <p class="text-11 text-muted flex-center gap-1">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              Last trip
+            </p>
+            <p class="text-11 font-semibold">Dhaka → Cox's Bazar</p>
+          </div>
+        </div>
+        <div class="fuel-bar-row">
+          <svg class="icon-xs text-muted" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+          <div class="fuel-track"><div class="fuel-fill fuel-warning" style="width:38%"></div></div>
+          <span class="fuel-pct">38%</span>
+        </div>
+        <div class="vehicle-footer">
+          <span class="text-11 text-muted">Midnight Blue</span>
+          <div class="flex-center gap-1">
+            <button class="qicon text-muted hover-fg" aria-label="View">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>
+            </button>
+            <button class="qicon text-accent hover-accent" aria-label="Fuel">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </button>
+            <button class="qicon text-success hover-success" aria-label="Expense">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><line stroke="currentColor" stroke-linecap="round" stroke-width="2.2" x1="12" x2="12" y1="2" y2="22"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </button>
+            <button class="qicon text-destructive hover-destructive" aria-label="Alert">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.2" fill="none"/><line x1="12" x2="12" y1="8" y2="12" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"/><line x1="12" x2="12.01" y1="16" y2="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button class="add-car-btn mt-3">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path d="M12 5v14" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+        Add another car
+      </button>
+    </section>
+
+    <!-- ── INSIGHTS ────────────────────── -->
+    <section class="section" aria-label="Insights">
+      <h2 class="section-title mb-3">Insights</h2>
+
+      <div class="glass card shadow-card">
+        <div class="chart-header">
+          <div>
+            <p class="text-11 text-muted">Mileage (km/L)</p>
+            <p class="text-lg font-bold">12.4 <span class="text-10 text-success">↑ 6%</span></p>
+          </div>
+          <div class="period-tabs">
+            <button class="period-btn">W</button>
+            <button class="period-btn active">M</button>
+            <button class="period-btn">Y</button>
+          </div>
+        </div>
+        <svg id="mileageChart" viewBox="0 0 280 80" class="w-full" style="height:80px;overflow:visible" aria-label="Mileage trend chart"></svg>
+      </div>
+
+      <div class="insights-grid">
+        <div class="glass card shadow-card">
+          <p class="text-11 text-muted mb-2">Spend Breakdown</p>
+          <div class="donut-wrap">
+            <svg id="donutChart" viewBox="0 0 80 80" class="donut-svg" aria-label="Spend breakdown"></svg>
+            <div class="donut-center">
+              <p class="text-9 text-muted">This mo.</p>
+              <p class="text-sm font-bold">৳18.4K</p>
+            </div>
+          </div>
+          <div class="donut-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#F26522"></span><span class="text-9 text-muted">Fuel</span></div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span><span class="text-9 text-muted">Service</span></div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--warning)"></span><span class="text-9 text-muted">Insurance</span></div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--muted-fg)"></span><span class="text-9 text-muted">Parking</span></div>
+          </div>
+        </div>
+
+        <div class="glass card shadow-card cost-card">
+          <div>
+            <p class="text-11 text-muted">Cost per km</p>
+            <p class="text-2xl font-bold mt-1">৳14.7</p>
+            <p class="text-10 text-success font-semibold">↓ 4% vs last month</p>
+          </div>
+          <div class="bar-chart" id="costBars" aria-label="Weekly cost bar chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ACTIVITY FEED ───────────────── -->
+    <section class="section" aria-label="Recent Activity">
+      <h2 class="section-title mb-3">Recent Activity</h2>
+      <div class="glass card shadow-card">
+
+        <div class="activity-item">
+          <div class="activity-icon-col">
+            <div class="act-icon tone-accent">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-row">
+              <p class="text-sm font-medium">Fuel added</p>
+              <span class="text-10 text-muted">12 min ago</span>
+            </div>
+            <p class="text-11 text-muted">My Daily · 32L · ৳3,840</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon-col">
+            <div class="act-icon tone-primary">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2.2" fill="none"/></svg>
+            </div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-row">
+              <p class="text-sm font-medium">Trip completed</p>
+              <span class="text-10 text-muted">1 hr ago</span>
+            </div>
+            <p class="text-11 text-muted">Home → Gulshan Office · 14 km</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon-col">
+            <div class="act-icon tone-success">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
+              </svg>
+            </div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-row">
+              <p class="text-sm font-medium">Parking paid</p>
+              <span class="text-10 text-muted">3 hr ago</span>
+            </div>
+            <p class="text-11 text-muted">Bashundhara City · ৳120</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon-col">
+            <div class="act-icon tone-warning">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-row">
+              <p class="text-sm font-medium">Oil change done</p>
+              <span class="text-10 text-muted">Yesterday</span>
+            </div>
+            <p class="text-11 text-muted">Weekend · 45,000 km service</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="bottom-spacer"></div>
+  </main>
+
+  <!-- ════════════════════════════════════
+       BOTTOM NAVIGATION — Floating Pill
+  ════════════════════════════════════ -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <button class="nav-item active" aria-label="Home">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Home</span>
+      </button>
+
+      <button class="nav-item" aria-label="Trips">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Trips</span>
+      </button>
+
+      <button class="nav-item" aria-label="Live Map">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none">
+          <polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+          <line x1="9" x2="9" y1="3" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          <line x1="15" x2="15" y1="6" y2="21" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+        </svg>
+        <span>Live Map</span>
+      </button>
+
+      <button class="nav-item" aria-label="Notifications">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+        </svg>
+        <span>Alerts</span>
+      </button>
+
+      <button class="nav-item" aria-label="Profile">
+        <span class="nav-indicator"></span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Profile</span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       SCHEDULE DETAIL PAGE
+  ════════════════════════════════════ -->
+  <div id="scheduleDetail" class="detail-page" aria-label="Schedule details">
+    <div class="detail-scrollable">
+    <div class="detail-inner">
+
+      <!-- ── Header ── -->
+      <div class="dp-header">
+        <button id="detailBack" class="dp-back-icon" aria-label="Go back">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m15 18-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="dp-header-center">
+          <p class="dp-header-title">Meeting with Client</p>
+          <p class="dp-header-subtitle">Visiting client site for overview and finalization</p>
+        </div>
+        
+      </div>
+
+      <!-- ── Content ── -->
+      <div class="dp-content">
+
+        <!-- Schedule Hero Card -->
+        <div class="dp-hero">
+          <div class="dp-hero-top">
+            <span class="dp-fleet-reg" id="dp-reg">DHA-METRO-GA-12-3456</span>
+            <span class="sc-status sc-status-active" id="dp-status">● Active</span>
+          </div>
+          <div class="dp-info-grid">
+            <div class="dp-info-item">
+              <p class="dp-info-label">Date</p>
+              <p class="dp-info-value" id="dp-date">10 May 2025</p>
+            </div>
+            <div class="dp-info-item">
+              <p class="dp-info-label">Departure</p>
+              <p class="dp-info-value" id="dp-time">8:30 AM</p>
+            </div>
+            <div class="dp-info-item">
+              <p class="dp-info-label">From</p>
+              <p class="dp-info-value dp-info-value-primary" id="dp-from">Mirpur DOHS</p>
+            </div>
+            <div class="dp-info-item">
+              <p class="dp-info-label">To</p>
+              <p class="dp-info-value" id="dp-to">Tejgaon Ind. Area</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Route Details -->
+        <p class="dp-section-title">Route Details</p>
+        <div class="dp-route-card">
+
+          <!-- Start -->
+          <div class="rt-item">
+            <div class="rt-indicator">
+              <div class="rt-dot rt-dot-start"></div>
+              <div class="rt-line rt-line-orange"></div>
+            </div>
+            <div class="rt-body">
+              <p class="rt-label">Start</p>
+              <p class="rt-place">Mirpur DOHS, Dhaka</p>
+            </div>
+          </div>
+
+          <!-- Stop 1 -->
+          <div class="rt-item">
+            <div class="rt-indicator">
+              <div class="rt-dot rt-dot-stop"></div>
+              <div class="rt-line"></div>
+            </div>
+            <div class="rt-body">
+              <p class="rt-label">Stoppage 1</p>
+              <p class="rt-place">Mirpur-10 Roundabout</p>
+            </div>
+          </div>
+
+          <!-- User Pickup — highlighted -->
+          <div class="rt-item">
+            <div class="rt-indicator">
+              <div class="rt-dot rt-dot-pickup"></div>
+              <div class="rt-line"></div>
+            </div>
+            <div class="rt-pickup-row">
+              <p class="rt-pickup-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                  <polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                Your Pickup
+              </p>
+              <p class="rt-place">Mirpur-10 Metro Station</p>
+              <p class="rt-sub">Platform Gate B · Ground Level</p>
+            </div>
+          </div>
+
+          <!-- Stop 2 -->
+          <div class="rt-item">
+            <div class="rt-indicator">
+              <div class="rt-dot rt-dot-stop"></div>
+              <div class="rt-line"></div>
+            </div>
+            <div class="rt-body">
+              <p class="rt-label">Stoppage 2</p>
+              <p class="rt-place">Farmgate</p>
+            </div>
+          </div>
+
+          <!-- Stop 3 -->
+          <div class="rt-item">
+            <div class="rt-indicator">
+              <div class="rt-dot rt-dot-stop"></div>
+              <div class="rt-line"></div>
+            </div>
+            <div class="rt-body">
+              <p class="rt-label">Stoppage 3</p>
+              <p class="rt-place">Karwan Bazar</p>
+            </div>
+          </div>
+
+          <!-- End -->
+          <div class="rt-item">
+            <div class="rt-indicator">
+              <div class="rt-dot rt-dot-end"></div>
+            </div>
+            <div class="rt-body">
+              <p class="rt-label">Destination</p>
+              <p class="rt-place">Tejgaon Industrial Area</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Route Map -->
+        <p class="dp-section-title">Route Map</p>
+        <div class="dp-map shadow-card">
+          <div class="dp-map-bg"></div>
+          <svg class="dp-map-svg" viewBox="0 0 390 200" fill="none" aria-hidden="true">
+            <!-- Grid lines -->
+            <line x1="0" y1="50"  x2="390" y2="50"  stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="0" y1="100" x2="390" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="0" y1="150" x2="390" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="80"  y1="0" x2="80"  y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="200" y1="0" x2="200" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="310" y1="0" x2="310" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Cross roads -->
+            <path d="M0 85 Q 100 75 200 100 T 390 90" stroke="rgba(255,255,255,0.12)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M80 0 L 80 200" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+            <path d="M310 0 L 310 200" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+            <!-- Main route — orange dashed -->
+            <path d="M 40 160 Q 80 140 130 100 Q 180 65 230 90 Q 280 115 350 50"
+                  stroke="#F26522" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-dasharray="8 5" opacity="0.9"/>
+            <!-- Route glow -->
+            <path d="M 40 160 Q 80 140 130 100 Q 180 65 230 90 Q 280 115 350 50"
+                  stroke="#F26522" stroke-width="8" stroke-linecap="round" opacity="0.15"/>
+            <!-- Stop markers -->
+            <circle cx="130" cy="100" r="5" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="230" cy="90"  r="5" fill="rgba(255,255,255,0.5)"/>
+            <!-- Pickup marker -->
+            <circle cx="180" cy="78"  r="9" fill="#F26522" opacity="0.9"/>
+            <circle cx="180" cy="78"  r="5" fill="#fff"/>
+            <circle cx="180" cy="78"  r="14" stroke="#F26522" stroke-width="2" opacity="0.3" fill="none"/>
+            <!-- Start marker -->
+            <circle cx="40" cy="160" r="8" fill="#F26522"/>
+            <circle cx="40" cy="160" r="14" stroke="#F26522" stroke-width="2" opacity="0.3" fill="none"/>
+            <!-- End marker -->
+            <circle cx="350" cy="50" r="8" fill="#38BDF8"/>
+            <circle cx="350" cy="50" r="14" stroke="#38BDF8" stroke-width="2" opacity="0.3" fill="none"/>
+          </svg>
+          <p class="dp-map-label dp-map-label-start">Start · Mirpur DOHS</p>
+          <p class="dp-map-label dp-map-label-end">End · Tejgaon</p>
+          <p class="dp-map-label dp-map-label-pickup">★ Your Pickup</p>
+        </div>
+
+        <!-- Driver Details -->
+        <p class="dp-section-title">Driver Details</p>
+        <div class="dp-driver-card">
+          <div class="driver-avatar">K</div>
+          <div class="driver-info">
+            <p class="driver-name">Md. Karim Uddin</p>
+            <p class="driver-phone">+880 1712-345678</p>
+            <div class="driver-rating">
+              <span class="driver-stars">★★★★★</span>
+              <span class="driver-score">4.8</span>
+              <span class="text-11 text-muted">· 1,240 trips</span>
+            </div>
+          </div>
+          <a href="tel:+8801712345678" class="driver-call" aria-label="Call driver">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div><!-- /detail-inner -->
+    </div><!-- /detail-scrollable -->
+
+    <!-- ── Pick Fleet CTA — flex child, always visible above nav ── -->
+    <div class="dp-cta">
+      <button id="pickFleetBtn" class="btn-pick-fleet">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 17H5v-2.5c0-.828.672-1.5 1.5-1.5h11c.828 0 1.5.672 1.5 1.5V17z"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17H3v-2a2 2 0 0 1 2-2M19 17h2v-2a2 2 0 0 0-2-2"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l1.5-4.5a2 2 0 0 1 1.9-1.5h3.2a2 2 0 0 1 1.9 1.5L17 11"/>
+          <circle cx="7.5"  cy="17.5" r="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="16.5" cy="17.5" r="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        Pick Fleet
+      </button>
+    </div>
+
+    <!-- Bottom nav — flex child, always pinned at bottom ── -->
+    <nav class="bottom-nav-dp" aria-label="Detail navigation">
+      <div class="nav-inner">
+
+        <button class="nav-item" aria-label="Home">
+          <span class="nav-indicator"></span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-item active" aria-label="Trips">
+          <span class="nav-indicator"></span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+          <span>Trips</span>
+        </button>
+
+        <button class="nav-item" aria-label="Live Map">
+          <span class="nav-indicator"></span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+            <line x1="9" x2="9" y1="3" y2="18" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+            <line x1="15" x2="15" y1="6" y2="21" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+          </svg>
+          <span>Live Map</span>
+        </button>
+
+        <button class="nav-item" aria-label="Notifications">
+          <span class="nav-indicator"></span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          </svg>
+          <span>Alerts</span>
+        </button>
+
+        <button class="nav-item" aria-label="Profile">
+          <span class="nav-indicator"></span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+          <span>Profile</span>
+        </button>
+
+      </div>
+    </nav>
+  </div>
+
+
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
