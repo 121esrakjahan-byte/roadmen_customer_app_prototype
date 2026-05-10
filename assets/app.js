@@ -197,7 +197,7 @@ function initScheduleDetails() {
     document.body.style.overflow = '';
   };
 
-  document.querySelectorAll('.schedule-card').forEach((card, i) => {
+  document.querySelectorAll('.schedule-card, .sched-card').forEach((card, i) => {
     card.addEventListener('click', () => open(SCHEDULE_DATA[i] || SCHEDULE_DATA[0]));
   });
 
